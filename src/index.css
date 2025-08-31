@@ -1,0 +1,236 @@
+@@ .. @@
+ @layer base {
+   :root {
+     /* Professional Dark Halloween Theme */
+-    --background: 0 0% 4%;
++    --background: 0 0% 3%;
+     --foreground: 0 0% 96%;
+
+-    --card: 0 0% 7%;
++    --card: 0 0% 5%;
+     --card-foreground: 0 0% 96%;
+
+-    --popover: 0 0% 6%;
++    --popover: 0 0% 4%;
+     --popover-foreground: 0 0% 96%;
+
+     /* Sophisticated Blood Red */
+-    --primary: 0 75% 50%;
++    --primary: 0 80% 55%;
+     --primary-foreground: 0 0% 98%;
+-    --primary-glow: 0 75% 60%;
+-    --primary-dark: 0 75% 35%;
++    --primary-glow: 0 80% 65%;
++    --primary-dark: 0 80% 40%;
+
+     /* Professional Secondary */}
+-    --secondary: 0 0% 15%;
++    --secondary: 0 0% 12%;
+     --secondary-foreground: 0 0% 96%;
+
+-    --muted: 0 0% 12%;
+-    --muted-foreground: 0 0% 70%;
++    --muted: 0 0% 10%;
++    --muted-foreground: 0 0% 65%;
+
+     /* Refined Accent Colors */
+-    --accent: 35 85% 55%; /* Warm Amber */
++    --accent: 35 90% 60%; /* Premium Amber */
+     --accent-foreground: 0 0% 10%;
+     
+-    --success: 140 50% 45%; /* Professional Forest Green */
++    --success: 140 60% 50%; /* Professional Forest Green */
+     --success-foreground: 0 0% 98%;
+
+-    --destructive: 0 70% 55%;
++    --destructive: 0 75% 60%;
+     --destructive-foreground: 0 0% 98%;
+
+     /* Professional Borders & Inputs */
+-    --border: 0 0% 18%;
+-    --input: 0 0% 15%;
+-    --ring: 0 75% 50%;
++    --border: 0 0% 15%;
++    --input: 0 0% 12%;
++    --ring: 0 80% 55%;
+
+-    --radius: 0.875rem;
++    --radius: 1rem;
+
+     /* Refined Gradients */
+-    --gradient-blood: linear-gradient(135deg, hsl(0 75% 40%), hsl(0 75% 50%), hsl(0 75% 35%));
+-    --gradient-fire: linear-gradient(135deg, hsl(0 75% 50%), hsl(25 80% 55%), hsl(35 85% 55%));
+-    --gradient-shadow: linear-gradient(180deg, hsl(0 0% 4%), hsl(0 0% 2%));
+-    --gradient-glow: radial-gradient(ellipse at center, hsl(0 75% 50% / 0.15), transparent 70%);
+-    --gradient-professional: linear-gradient(135deg, hsl(0 0% 8%), hsl(0 0% 6%));
++    --gradient-blood: linear-gradient(135deg, hsl(0 80% 45%), hsl(0 80% 55%), hsl(0 80% 40%));
++    --gradient-fire: linear-gradient(135deg, hsl(0 80% 55%), hsl(25 85% 60%), hsl(35 90% 60%));
++    --gradient-shadow: linear-gradient(180deg, hsl(0 0% 3%), hsl(0 0% 1%));
++    --gradient-glow: radial-gradient(ellipse at center, hsl(0 80% 55% / 0.2), transparent 70%);
++    --gradient-professional: linear-gradient(135deg, hsl(0 0% 6%), hsl(0 0% 4%));
+
+     /* Professional Shadows */
+-    --shadow-blood: 0 8px 32px -8px hsl(0 75% 40% / 0.3);
+-    --shadow-glow: 0 0 40px hsl(0 75% 50% / 0.4);
+-    --shadow-dark: 0 20px 40px -10px hsl(0 0% 0% / 0.7);
+-    --shadow-subtle: 0 4px 16px -4px hsl(0 0% 0% / 0.4);
++    --shadow-blood: 0 12px 40px -8px hsl(0 80% 45% / 0.4);
++    --shadow-glow: 0 0 60px hsl(0 80% 55% / 0.5);
++    --shadow-dark: 0 25px 50px -12px hsl(0 0% 0% / 0.8);
++    --shadow-subtle: 0 8px 24px -6px hsl(0 0% 0% / 0.5);
+     
+     /* Smooth Professional Animations */
+-    --transition-spooky: all 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+-    --transition-smooth: all 0.25s ease-out;
++    --transition-spooky: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
++    --transition-smooth: all 0.3s ease-out;
+   }
+
+   .dark {
+-    --background: 0 0% 2%;
++    --background: 0 0% 1%;
+     --foreground: 0 0% 98%;
+-    --card: 0 0% 6%;
++    --card: 0 0% 4%;
+     --card-foreground: 0 0% 98%;
+   }
+ }
+@@ .. @@
+
+   body {
+     @apply bg-background text-foreground font-didot antialiased;
+     background-image: 
+-      radial-gradient(circle at 20% 80%, hsl(0 85% 15% / 0.1) 0%, transparent 50%),
+-      radial-gradient(circle at 80% 20%, hsl(0 85% 15% / 0.1) 0%, transparent 50%);
++      radial-gradient(circle at 20% 80%, hsl(0 90% 20% / 0.08) 0%, transparent 60%),
++      radial-gradient(circle at 80% 20%, hsl(35 90% 20% / 0.08) 0%, transparent 60%),
++      linear-gradient(180deg, hsl(0 0% 2%), hsl(0 0% 1%));
+   }
+
+   /* Scrollbar Styling */
+   ::-webkit-scrollbar {
+-    width: 8px;
++    width: 12px;
+   }
+
+   ::-webkit-scrollbar-track {
+     @apply bg-background;
+   }
+
+   ::-webkit-scrollbar-thumb {
+-    background: linear-gradient(180deg, hsl(var(--primary)), hsl(var(--primary-glow)));
+-    border-radius: 4px;
++    background: linear-gradient(180deg, hsl(var(--primary)), hsl(var(--primary-glow)));
++    border-radius: 6px;
+   }
+
+   ::-webkit-scrollbar-thumb:hover {
+     background: linear-gradient(180deg, hsl(var(--primary-glow)), hsl(var(--primary)));
+   }
+ }
+
+ @layer components {
+   /* Halloween Text Effects */
+   .text-glow {
+-    text-shadow: 0 0 20px hsl(var(--primary) / 0.8), 0 0 40px hsl(var(--primary) / 0.6);
++    text-shadow: 
++      0 0 20px hsl(var(--primary) / 0.9), 
++      0 0 40px hsl(var(--primary) / 0.7),
++      0 0 60px hsl(var(--primary) / 0.5);
+   }
+
+   .text-blood {
+@@ .. @@
+   /* Interactive Elements */
+   .hover-float:hover {
+-    transform: translateY(-8px);
++    transform: translateY(-12px);
+     box-shadow: var(--shadow-blood);
+     transition: var(--transition-spooky);
+   }
+
+   .pulse-blood {
+-    animation: pulse-blood 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
++    animation: pulse-blood 2.5s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+   }
+
+   @keyframes pulse-blood {
+     0%, 100% {
+-      box-shadow: 0 0 0 0 hsl(var(--primary) / 0.7);
++      box-shadow: 0 0 0 0 hsl(var(--primary) / 0.8);
+     }
+     70% {
+-      box-shadow: 0 0 0 15px hsl(var(--primary) / 0);
++      box-shadow: 0 0 0 20px hsl(var(--primary) / 0);
+     }
+   }
+
+   /* Spooky Underline Animation */
+@@ .. @@
+
+   .spooky-link::after {
+     content: '';
+-    @apply absolute bottom-0 left-0 w-full h-0.5 bg-primary scale-x-0 origin-right transition-transform duration-300;
++    @apply absolute bottom-0 left-0 w-full h-0.5 bg-primary scale-x-0 origin-right;
++    transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+   }
+
+   .spooky-link:hover::after {
+     @apply scale-x-100 origin-left;
+   }
+
+   /* Professional Halloween Card Effects */
+   .halloween-card {
+-    background: var(--gradient-professional);
+-    border: 1px solid hsl(var(--border));
++    background: linear-gradient(135deg, 
++      hsl(var(--card) / 0.9), 
++      hsl(var(--card) / 0.7)
++    );
+     box-shadow: var(--shadow-subtle);
+     transition: var(--transition-smooth);
+-    backdrop-filter: blur(10px);
++    backdrop-filter: blur(20px);
+   }
+
+   .halloween-card:hover {
+-    border-color: hsl(var(--primary) / 0.3);
++    border-color: hsl(var(--primary) / 0.4);
+     box-shadow: var(--shadow-blood), var(--shadow-subtle);
+-    transform: translateY(-2px);
++    transform: translateY(-4px);
+   }
+
+   /* Professional Glass Effect */
+   .glass-effect {
+     background: linear-gradient(135deg, 
+-      hsl(var(--card) / 0.8), 
+-      hsl(var(--card) / 0.6)
++      hsl(var(--card) / 0.9), 
++      hsl(var(--card) / 0.7)
+     );
+-    border: 1px solid hsl(var(--border) / 0.5);
+-    backdrop-filter: blur(20px);
++    border: 1px solid hsl(var(--border) / 0.6);
++    backdrop-filter: blur(30px);
+     box-shadow: var(--shadow-subtle);
+   }
+
+   /* Professional Button Glow */
+   .professional-glow:hover {
+-    box-shadow: 0 0 30px hsl(var(--primary) / 0.3), var(--shadow-subtle);
++    box-shadow: 0 0 40px hsl(var(--primary) / 0.4), var(--shadow-subtle);
++    transform: translateY(-2px);
+   }
++
++  /* Smooth Scroll Behavior */
++  html {
++    scroll-behavior: smooth;
++  }
++
++  /* Professional Focus States */
++  *:focus-visible {
++    outline: 2px solid hsl(var(--primary));
++    outline-offset: 2px;
++  }
+ }
