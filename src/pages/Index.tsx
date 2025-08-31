@@ -12,3 +12,5 @@
        <HeroSection />
        <WhatsNewSection />
        <ExperiencesSection />
+   )
+ }

@@ -1,6 +1,8 @@
 @@ .. @@
  const Footer = () => {
    return (
+   )
+ }
 -    <footer className="bg-gradient-shadow py-16 px-6 relative">
 +    <footer id="contact" className="bg-gradient-shadow py-20 px-6 relative">
        {/* Background Effects */}
