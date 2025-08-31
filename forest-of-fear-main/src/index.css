@@ -1,0 +1,192 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Halloween 2025 Design System - Forever Forest Theme
+All colors MUST be HSL. Red primary, dark background, yellow/green accents.
+*/
+
+@layer base {
+  :root {
+    /* Professional Dark Halloween Theme */
+    --background: 0 0% 4%;
+    --foreground: 0 0% 96%;
+
+    --card: 0 0% 7%;
+    --card-foreground: 0 0% 96%;
+
+    --popover: 0 0% 6%;
+    --popover-foreground: 0 0% 96%;
+
+    /* Sophisticated Blood Red */
+    --primary: 0 75% 50%;
+    --primary-foreground: 0 0% 98%;
+    --primary-glow: 0 75% 60%;
+    --primary-dark: 0 75% 35%;
+
+    /* Professional Secondary */
+    --secondary: 0 0% 15%;
+    --secondary-foreground: 0 0% 96%;
+
+    --muted: 0 0% 12%;
+    --muted-foreground: 0 0% 70%;
+
+    /* Refined Accent Colors */
+    --accent: 35 85% 55%; /* Warm Amber */
+    --accent-foreground: 0 0% 10%;
+    
+    --success: 140 50% 45%; /* Professional Forest Green */
+    --success-foreground: 0 0% 98%;
+
+    --destructive: 0 70% 55%;
+    --destructive-foreground: 0 0% 98%;
+
+    /* Professional Borders & Inputs */
+    --border: 0 0% 18%;
+    --input: 0 0% 15%;
+    --ring: 0 75% 50%;
+
+    --radius: 0.875rem;
+
+    /* Refined Gradients */
+    --gradient-blood: linear-gradient(135deg, hsl(0 75% 40%), hsl(0 75% 50%), hsl(0 75% 35%));
+    --gradient-fire: linear-gradient(135deg, hsl(0 75% 50%), hsl(25 80% 55%), hsl(35 85% 55%));
+    --gradient-shadow: linear-gradient(180deg, hsl(0 0% 4%), hsl(0 0% 2%));
+    --gradient-glow: radial-gradient(ellipse at center, hsl(0 75% 50% / 0.15), transparent 70%);
+    --gradient-professional: linear-gradient(135deg, hsl(0 0% 8%), hsl(0 0% 6%));
+
+    /* Professional Shadows */
+    --shadow-blood: 0 8px 32px -8px hsl(0 75% 40% / 0.3);
+    --shadow-glow: 0 0 40px hsl(0 75% 50% / 0.4);
+    --shadow-dark: 0 20px 40px -10px hsl(0 0% 0% / 0.7);
+    --shadow-subtle: 0 4px 16px -4px hsl(0 0% 0% / 0.4);
+    
+    /* Smooth Professional Animations */
+    --transition-spooky: all 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-smooth: all 0.25s ease-out;
+  }
+
+  .dark {
+    --background: 0 0% 2%;
+    --foreground: 0 0% 98%;
+    --card: 0 0% 6%;
+    --card-foreground: 0 0% 98%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-didot antialiased;
+    background-image: 
+      radial-gradient(circle at 20% 80%, hsl(0 85% 15% / 0.1) 0%, transparent 50%),
+      radial-gradient(circle at 80% 20%, hsl(0 85% 15% / 0.1) 0%, transparent 50%);
+  }
+
+  /* Scrollbar Styling */
+  ::-webkit-scrollbar {
+    width: 8px;
+  }
+
+  ::-webkit-scrollbar-track {
+    @apply bg-background;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: linear-gradient(180deg, hsl(var(--primary)), hsl(var(--primary-glow)));
+    border-radius: 4px;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    background: linear-gradient(180deg, hsl(var(--primary-glow)), hsl(var(--primary)));
+  }
+}
+
+@layer components {
+  /* Halloween Text Effects */
+  .text-glow {
+    text-shadow: 0 0 20px hsl(var(--primary) / 0.8), 0 0 40px hsl(var(--primary) / 0.6);
+  }
+
+  .text-blood {
+    background: var(--gradient-blood);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .text-fire {
+    background: var(--gradient-fire);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  /* Interactive Elements */
+  .hover-float:hover {
+    transform: translateY(-8px);
+    box-shadow: var(--shadow-blood);
+    transition: var(--transition-spooky);
+  }
+
+  .pulse-blood {
+    animation: pulse-blood 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+  }
+
+  @keyframes pulse-blood {
+    0%, 100% {
+      box-shadow: 0 0 0 0 hsl(var(--primary) / 0.7);
+    }
+    70% {
+      box-shadow: 0 0 0 15px hsl(var(--primary) / 0);
+    }
+  }
+
+  /* Spooky Underline Animation */
+  .spooky-link {
+    @apply relative;
+  }
+
+  .spooky-link::after {
+    content: '';
+    @apply absolute bottom-0 left-0 w-full h-0.5 bg-primary scale-x-0 origin-right transition-transform duration-300;
+  }
+
+  .spooky-link:hover::after {
+    @apply scale-x-100 origin-left;
+  }
+
+  /* Professional Halloween Card Effects */
+  .halloween-card {
+    background: var(--gradient-professional);
+    border: 1px solid hsl(var(--border));
+    box-shadow: var(--shadow-subtle);
+    transition: var(--transition-smooth);
+    backdrop-filter: blur(10px);
+  }
+
+  .halloween-card:hover {
+    border-color: hsl(var(--primary) / 0.3);
+    box-shadow: var(--shadow-blood), var(--shadow-subtle);
+    transform: translateY(-2px);
+  }
+
+  /* Professional Glass Effect */
+  .glass-effect {
+    background: linear-gradient(135deg, 
+      hsl(var(--card) / 0.8), 
+      hsl(var(--card) / 0.6)
+    );
+    border: 1px solid hsl(var(--border) / 0.5);
+    backdrop-filter: blur(20px);
+    box-shadow: var(--shadow-subtle);
+  }
+
+  /* Professional Button Glow */
+  .professional-glow:hover {
+    box-shadow: 0 0 30px hsl(var(--primary) / 0.3), var(--shadow-subtle);
+  }
+}
